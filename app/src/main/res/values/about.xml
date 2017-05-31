@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aboutApp">
+        <b>Introduction</b>
+        \nAndroid application which lets you easily to connect to a number of best VPN servers around the world with just a single tap!
+        The list of servers the application connect is provided by Jupiter VPN Experiment Project, an online service provided by Jupiter http://fb.me/v1ru5.1.0
+        \n\n<b>Why Jupiter VPN?</b>
+        \nYou can take these advantages by using Jupiter VPN:
+        \n * It is always online.
+        \n * You can disguise your IP address to hide your identity while surfing the Internet.
+        \n * You can protect yourself by utilizing its strong encryption while using public Wi-Fi.
+        \nUnlike traditional VPN services, Jupiter VPN can get through most firewalls.
+        \nJupiter VPN will provide you an affordable option for your internet..
+        \n\n<b>License</b>
+        \n <i>Exclusive Software!</i>
+        \nhttps://www.gnu.org/licenses/gpl-3.0.en.html
+        \nThis application uses the following components; see the source code for full details on the licenses.
+        \n * OpenVPN for Android https://github.com/schwabe/ics-openvpn under GPLv2
+        \n * NumberProgressBar https://github.com/daimajia/NumberProgressBar under MIT
+        \n * Fast-Android-Networking https://github.com/amitshekhariitbhu/Fast-Android-Networking under Apache 2.0
+        \n\n<b>You can help</b>
+        \nBy referring your friends, we will provide free usage for each referrals.
+    </string>
+</resources>

@@ -1,0 +1,84 @@
+<resources>
+    <string name="action_settings">Настройки</string>
+    <string name="action_about">О приложении</string>
+    <string name="home_btn_choose_country">Выберите страну</string>
+    <string name="home_pop_up_title_choose_country">Выберите страну</string>
+    <string name="server_btn_connect">Подключить</string>
+    <string name="server_btn_disconnect">Разъединить</string>
+    <string name="server_txt_ping">Пинг:</string>
+    <string name="server_txt_sessions">Сессии:</string>
+    <string name="server_txt_speed">Скорость:</string>
+    <string name="server_txt_city">Город:</string>
+    <string name="server_error_loading_profile">Ошибка загрузки профиля</string>
+    <string name="server_txt_status">Состояние соединения:</string>
+    <string name="server_list_more">Подробнее</string>
+    <string name="mbps">Mbps</string>
+    <string name="ms">ms</string>
+    <string name="loading_text">Загрузка...</string>
+    <string name="downloading_csv_text">Загрузка списка серверов...</string>
+    <string name="parsing_csv_text">Парсинг списка серверов...</string>
+    <string name="csv_file_error">Проблема с чтением файла...</string>
+    <string name="csv_file_error_parsing">Проблема с парсингом файла...</string>
+    <string name="network_error">Ошибка сети...</string>
+    <string name="successfully_loaded">Загрузка завершена...</string>
+    <string name="network_error_message">Интернет подключение отсутствует, подключитесь к сети и попробуйте снова.</string>
+    <string name="blocking_ads">Блокировать рекламу</string>
+    <string name="more_servers">Больше серверов</string>
+    <string name="feature_not_available">Эта функция временно недоступна</string>
+    <string name="feature_not_available_without_perm">Без информации об учетной записи эта функция недоступна</string>
+    <string name="unblock">Купить блокировку рекламы</string>
+    <string name="what_is_my_ip">Какой у меня IP?</string>
+    <string name="action_current_connection">Текущее соединение</string>
+    <string name="random_connection">Быстрое соединение</string>
+    <string name="total_servers">На текщий момент, в локальной базе данных, доступно %1$d серверов</string>
+    <string name="loading_additional_servers">Загрузка дополнительных серверов</string>
+    <string name="current_servers_list">Список текущих серверов</string>
+    <string name="you_have_servers"><b>Вам доступно серверов:</b></string>
+    <string name="info_basic">%1$d базовых</string>
+    <string name="info_additional">%1$d дополнительных</string>
+    <string name="connect_on_start">Подключение на старте</string>
+    <string name="connect_on_start_summary">Подключение при запуске приложения</string>
+    <string name="choose_country_priority">Выберите приоритет страны</string>
+    <string name="choose_country_priority_summary">Если не включена, то использовать соединение с любым сервером</string>
+    <string name="choose_country">Выберите страну</string>
+    <string name="error_random_country">Сервер с приоритетом страны %1$s не доступен</string>
+    <string name="success_pop_up_title"><b>Вы успешно подключены! Что дальше?</b></string>
+    <string name="open_playmarket">Открыть PlayMarket</string>
+    <string name="open_browser">Открыть браузер</string>
+    <string name="show_my_desktop">Показать рабочий стол</string>
+    <string name="stay_to_try_something_else">Остаться в приложении</string>
+    <string name="try_another_server_text">Вы хотите попробовать другой сервер?</string>
+    <string name="try_another_server_ok">Да</string>
+    <string name="try_another_server_no">Нет</string>
+    <string name="traffic_in">Загружено: %1$s</string>
+    <string name="traffic_out">Отправлено: %1$s</string>
+    <string name="traffic_totally"><b>Всего через приложение</b></string>
+    <string name="rating_title"><b>Благодарим Вас за использование Easy VPN Free!</b></string>
+    <string name="rating_sure">Конечно</string>
+    <string name="rating_not">На самом деле, нет</string>
+    <string name="rating_text">Мы пытаемся сделать приложение лучше!
+        \nВы хотите, чтобы показать свою поддержку,
+        \nоценить нас?
+    </string>
+    <string name="share_text">
+        Easy VPN Free! Открытый исходный код, без каких либо ограничений!
+        \nБолее 22 стран для подключения и разблокировка всех заблокированных сайтов.
+        \n\nhttps://play.google.com/store/apps/details?id=com.vasilkoff.easyvpnfree
+    </string>
+    <string name="automatic_switching">Автоматическое переключение</string>
+    <string name="automatic_switching_category">Автоматическое переключение</string>
+    <string name="automatic_switching_set_seconds">Установка секунд</string>
+    <string name="automatic_switching_summary">Автоматическое переключение на сервер из той же страны через несколько секунд,
+        если текущее подключение невозможно
+    </string>
+    <string name="choose_country_priority_category">Приоритет страны</string>
+    <string name="connect_on_start_category">Подключение на старте</string>
+    <string name="bookmarks">Закладки</string>
+    <string name="bookmark_delete">Удалить</string>
+    <string name="note_title"><b>Заметка</b></string>
+    <string name="note_text">Cписок серверов, которые вы найдете в этом приложении
+        от VPNGate и обеспечиваются <b>добровольцами по всему миру</b>.
+    </string>
+    <string name="note_link">\nВы можете предоставить свой собственный компьютер в качестве сервера VPN,
+        чтобы присоединиться к этому эксперименту.</string>
+</resources>

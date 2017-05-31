@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/homeContextRL"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vasilkoff.easyvpnfree.activity.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/homeBtnRandomConnection"
+            android:text="@string/random_connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/buttons"
+            android:minHeight="40dp"
+            android:onClick="homeOnClick"
+            android:padding="5dp"
+            android:minWidth="180dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/homeBtnChooseCountry"
+            android:text="@string/home_btn_choose_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/buttons"
+            android:minHeight="40dp"
+            android:minWidth="180dp"
+            android:onClick="homeOnClick"
+            android:padding="5dp" />
+        <TextView
+            android:id="@+id/homeTotalServers"
+            android:textColor="@color/totalServers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
