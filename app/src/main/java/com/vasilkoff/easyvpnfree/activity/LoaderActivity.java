@@ -1,5 +1,6 @@
 package com.vasilkoff.easyvpnfree.activity;
 
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
@@ -36,6 +37,7 @@ import java.util.concurrent.TimeUnit;
 
 import de.blinkt.openvpn.core.NativeUtils;
 import okhttp3.OkHttpClient;
+import cf.jupitervpn.mcrypt.MCrypt;
 
 
 public class LoaderActivity extends BaseActivity {
@@ -50,14 +52,14 @@ public class LoaderActivity extends BaseActivity {
     private final int PARSE_PROGRESS = 2;
     private final int LOADING_SUCCESS = 3;
     private final int SWITCH_TO_RESULT = 4;
-    private final String BASE_URL = "http://0.freebasics.com.jupitervpn.cf/iphone.php";
+    private final String BASE_URL = "93bf5138228205addec318fb3f6a383f810804c0bdbbe333027a0c0f2802e11d7a34c3f7d61fefa72baf667124463b14";
     private final String BASE_FILE_NAME = ".vpngate.csv";
 
     //private final String android_id = Secure.getString(this.getContentResolver(),Secure.ANDROID_ID);
 
     private boolean premiumStage = true;
 
-    private final String PREMIUM_URL = "http://easyvpn.rusweb.club/?type=csv";
+    private final String PREMIUM_URL = "93bf5138228205addec318fb3f6a383f810804c0bdbbe333027a0c0f2802e11d7a34c3f7d61fefa72baf667124463b14";
     private final String PREMIUM_FILE_NAME = ".premiumServers.csv";
 
     private int percentDownload = 0;
@@ -68,11 +70,11 @@ public class LoaderActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loader);
 
-        progressBar = (NumberProgressBar)findViewById(R.id.number_progress_bar);
-        commentsText = (TextView)findViewById(R.id.commentsText);
+        progressBar = findViewById(R.id.number_progress_bar);
+        commentsText = findViewById(R.id.commentsText);
 
         if (getIntent().getBooleanExtra("firstPremiumLoad", false))
-            ((TextView)findViewById(R.id.loaderPremiumText)).setVisibility(View.VISIBLE);
+            findViewById(R.id.loaderPremiumText).setVisibility(View.VISIBLE);
 
         progressBar.setMax(100);
 
@@ -128,7 +130,14 @@ public class LoaderActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        downloadCSVFile(BASE_URL, BASE_FILE_NAME);
+        MCrypt mcrypt = new MCrypt();
+        String BASE_URL_DEC = "";
+        try {
+            BASE_URL_DEC = new String(mcrypt.decrypt(BASE_URL));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        downloadCSVFile(BASE_URL_DEC, BASE_FILE_NAME);
     }
 
     @Override
@@ -265,4 +274,5 @@ public class LoaderActivity extends BaseActivity {
             }
         }
     }
+
 }

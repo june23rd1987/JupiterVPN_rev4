@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.net.VpnService;
@@ -102,32 +103,34 @@ public class ServerActivity extends BaseActivity {
     private boolean inBackground;
     private static Stopwatch stopwatch;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server);
 
-        bookmark = (ImageButton) findViewById(R.id.serverBookmark);
-        parentLayout = (LinearLayout) findViewById(R.id.serverParentLayout);
-        unblockCheck = (Button) findViewById(R.id.serverUnblockCheck);
-        adbBlockCheck = (CheckBox) findViewById(R.id.serverBlockingCheck);
-        connectingProgress = (ProgressBar) findViewById(R.id.serverConnectingProgress);
-        lastLog = (TextView) findViewById(R.id.serverStatus);
-        serverConnect = (Button) findViewById(R.id.serverConnect);
+        bookmark = findViewById(R.id.serverBookmark);
+        parentLayout = findViewById(R.id.serverParentLayout);
+        unblockCheck = findViewById(R.id.serverUnblockCheck);
+        adbBlockCheck = findViewById(R.id.serverBlockingCheck);
+        connectingProgress = findViewById(R.id.serverConnectingProgress);
+        lastLog = findViewById(R.id.serverStatus);
+        serverConnect = findViewById(R.id.serverConnect);
 
         String totalIn = String.format(getResources().getString(R.string.traffic_in),
                 TotalTraffic.getTotalTraffic().get(0));
-        trafficInTotally = (TextView) findViewById(R.id.serverTrafficInTotally);
+        trafficInTotally = findViewById(R.id.serverTrafficInTotally);
         trafficInTotally.setText(totalIn);
 
         String totalOut = String.format(getResources().getString(R.string.traffic_out),
                 TotalTraffic.getTotalTraffic().get(1));
-        trafficOutTotally = (TextView) findViewById(R.id.serverTrafficOutTotally);
+        trafficOutTotally = findViewById(R.id.serverTrafficOutTotally);
         trafficOutTotally.setText(totalOut);
 
-        trafficIn = (TextView) findViewById(R.id.serverTrafficIn);
+        trafficIn = findViewById(R.id.serverTrafficIn);
         trafficIn.setText("");
-        trafficOut = (TextView) findViewById(R.id.serverTrafficOut);
+        trafficOut = findViewById(R.id.serverTrafficOut);
         trafficOut.setText("");
 
         br = new BroadcastReceiver() {
@@ -178,7 +181,7 @@ public class ServerActivity extends BaseActivity {
 
         autoConnection = intent.getBooleanExtra("autoConnection", false);
         fastConnection = intent.getBooleanExtra("fastConnection", false);
-        currentServer = (Server)intent.getParcelableExtra(Server.class.getCanonicalName());
+        currentServer = intent.getParcelableExtra(Server.class.getCanonicalName());
 
         if (currentServer == null) {
             if (connectedServer != null) {
@@ -566,7 +569,7 @@ public class ServerActivity extends BaseActivity {
         popupWindow.setFocusable(true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
 
-        Button marketButton = (Button)view.findViewById(R.id.successPopUpBtnPlayMarket);
+        Button marketButton = view.findViewById(R.id.successPopUpBtnPlayMarket);
         marketButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -582,14 +585,14 @@ public class ServerActivity extends BaseActivity {
         if (BuildConfig.FLAVOR == "underground")
             marketButton.setVisibility(View.GONE);
 
-        ((Button)view.findViewById(R.id.successPopUpBtnBrowser)).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.successPopUpBtnBrowser).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendTouchButton("successPopUpBtnBrowser");
                 startActivity( new Intent( Intent.ACTION_VIEW, Uri.parse("http://google.com")));
             }
         });
-        ((Button)view.findViewById(R.id.successPopUpBtnDesktop)).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.successPopUpBtnDesktop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendTouchButton("successPopUpBtnDesktop");
@@ -599,7 +602,7 @@ public class ServerActivity extends BaseActivity {
                 startActivity(startMain);
             }
         });
-        ((Button)view.findViewById(R.id.successPopUpBtnClose)).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.successPopUpBtnClose).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendTouchButton("successPopUpBtnClose");
@@ -607,9 +610,8 @@ public class ServerActivity extends BaseActivity {
             }
         });
 
-
         popupWindow.showAtLocation(parentLayout, Gravity.CENTER,0, 0);
-
+        
     }
 
     private void showRating() {
@@ -626,7 +628,7 @@ public class ServerActivity extends BaseActivity {
         popupWindow.setFocusable(true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
 
-        ((Button)view.findViewById(R.id.ratingBtnSure)).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.ratingBtnSure).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popupWindow.dismiss();
@@ -638,7 +640,7 @@ public class ServerActivity extends BaseActivity {
                 }
             }
         });
-        ((Button)view.findViewById(R.id.ratingBtnNot)).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.ratingBtnNot).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popupWindow.dismiss();

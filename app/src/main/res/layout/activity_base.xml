@@ -9,15 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/toolbarBg"
-            app:titleTextColor="@color/toolbarTitle"
-            app:titleMarginStart="20dp"
             app:contentInsetStart="10dp"
-            app:logo="@drawable/ic_app_small"/>
+            app:logo="@drawable/ic_app_small"
+            app:titleMarginStart="20dp"
+            app:titleTextColor="@color/toolbarTitle" />
 
         <FrameLayout
             android:id="@+id/activity_content"

